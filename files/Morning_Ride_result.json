@@ -1,0 +1,125 @@
+{
+  "user_id": "0001",
+  "start_lat": 0,
+  "start_lon": 0,
+  "distance_km": 36.1,
+  "duration_sec": 6958,
+  "elevation_gain": 692,
+  "elevation_loss": 695,
+  "max_elevation": 1038,
+  "min_elevation": 977,
+  "start_date": "",
+  "end_date": "",
+  "avg_speed": 18.68,
+  "max_speed": 75.06,
+  "avg_hr": 166,
+  "max_hr_recorded": 195,
+  "user_max_hr": 213,
+  "moving_time_sec": 6743,
+  "stopped_time_sec": 215,
+  "calories": 1536,
+  "training_load": 146,
+  "score": 65,
+  "zone_distribution": {
+    "z1": 245,
+    "z2": 1080,
+    "z3": 2073,
+    "z4": 2761,
+    "z5": 645
+  },
+  "zone_percentage": {
+    "z1": 3.6,
+    "z2": 15.9,
+    "z3": 30.5,
+    "z4": 40.6,
+    "z5": 9.5
+  },
+  "hr_zones_time": {
+    "z1": 248,
+    "z2": 1091,
+    "z3": 2073,
+    "z4": 2775,
+    "z5": 650
+  },
+  "route": [
+    {
+      "lat": 0,
+      "lon": 0
+    }
+  ],
+  "best_efforts": {
+    "5km": {
+      "distance_km": 5.0,
+      "elapsed_sec": 818,
+      "avg_speed_kmh": 22.02,
+      "avg_hr": 162.4,
+      "avg_power_w": null
+    }
+  },
+  "segment_efforts": [
+    {
+      "segment": "0-5.0km",
+      "distance_km": 5.0,
+      "elapsed_sec": 1030,
+      "avg_speed_kmh": 17.48,
+      "avg_hr": 144.7,
+      "avg_power_w": null
+    },
+    {
+      "segment": "5-10.0km",
+      "distance_km": 5.0,
+      "elapsed_sec": 1103,
+      "avg_speed_kmh": 16.32,
+      "avg_hr": 184.3,
+      "avg_power_w": null
+    },
+    {
+      "segment": "10-15.0km",
+      "distance_km": 5.0,
+      "elapsed_sec": 886,
+      "avg_speed_kmh": 20.32,
+      "avg_hr": 167.9,
+      "avg_power_w": null
+    },
+    {
+      "segment": "15-20.0km",
+      "distance_km": 5.01,
+      "elapsed_sec": 936,
+      "avg_speed_kmh": 19.25,
+      "avg_hr": 171.0,
+      "avg_power_w": null
+    },
+    {
+      "segment": "20-25.0km",
+      "distance_km": 5.0,
+      "elapsed_sec": 859,
+      "avg_speed_kmh": 20.96,
+      "avg_hr": 166.1,
+      "avg_power_w": null
+    },
+    {
+      "segment": "25-30.0km",
+      "distance_km": 5.0,
+      "elapsed_sec": 986,
+      "avg_speed_kmh": 18.27,
+      "avg_hr": 159.3,
+      "avg_power_w": null
+    },
+    {
+      "segment": "30-35.0km",
+      "distance_km": 5.0,
+      "elapsed_sec": 911,
+      "avg_speed_kmh": 19.76,
+      "avg_hr": 167.2,
+      "avg_power_w": null
+    },
+    {
+      "segment": "35-36.1km",
+      "distance_km": 1.08,
+      "elapsed_sec": 247,
+      "avg_speed_kmh": 15.81,
+      "avg_hr": 175.0,
+      "avg_power_w": null
+    }
+  ]
+}
