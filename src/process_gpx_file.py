@@ -5,9 +5,20 @@ from pathlib import Path
 from typing import Optional
 from src.gpx_processor import process_gpx_file
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 PROJECT_ROOT = Path(__file__).parent.parent
 FILES_DIR = PROJECT_ROOT / "files"
 print(FILES_DIR)
+
+user_max_hr = int(os.getenv("USER_MAX_HR"))
+user_weight =  int(os.getenv("USER_WEIGHT"))
+user_age = int(os.getenv("USER_AGE"))
+user_gender = os.getenv("USER_GENDER")
+
 
 
 def process_all_gpx_files(
@@ -31,7 +42,7 @@ def process_all_gpx_files(
                 content = file.read()
             result = process_gpx_file(
                 content=content,
-                max_hr=max_hr,
+                max_hr=user_max_hr,
                 user_weight=user_weight,
                 user_age=user_age,
                 user_gender=user_gender,
@@ -53,22 +64,13 @@ def process_all_gpx_files(
 
 def main():
     print("\n=== GPX Processor ===\n")
-
-    max_hr = int(input("Max HR: "))
-    weight_input = input("Peso (kg) [opcional]: ")
-    user_weight = float(weight_input) if weight_input else None
-    age_input = input("Idade [opcional]: ")
-    user_age = float(age_input) if age_input else None
-    gender_input = input("Sexo [opcional]( fem / masc ): ")
-    user_gender = gender_input if gender_input else None
-
     print("\nIniciando processamento...\n")
 
     process_all_gpx_files(
-        max_hr=max_hr,
+        max_hr=user_max_hr,
         user_weight=user_weight,
         user_age=user_age,
-        user_gender=user_gender,
+        user_gender=user_gender
     )
 
 

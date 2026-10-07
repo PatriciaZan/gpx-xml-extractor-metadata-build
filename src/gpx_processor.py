@@ -29,6 +29,13 @@ from src.services.segment_efforts import calculate_segment_efforts
 
 logger = logging.getLogger(__name__)
 
+def _safe_calculate(func, default, error_msg: str, *args, **kwargs):
+    """Função utilitária para evitar blocos try/except repetitivos em métricas opcionais."""
+    try:
+        return func(*args, **kwargs)
+    except Exception as e:
+        logger.warning(f"{error_msg}: {e}")
+        return default
 
 def process_gpx_file(
         content: bytes,
@@ -38,24 +45,8 @@ def process_gpx_file(
         user_age: Optional[float] = None,
         user_gender: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """
-    Processa um arquivo GPX e retorna todas as métricas.
 
-    Args:
-        content: Bytes do arquivo GPX
-        user_id: ID do usuário
-        max_hr: Frequência cardíaca máxima do usuário (padrão: 210)
-        user_weight: Peso do usuário em kg (opcional)
-        user_age: Idade do usuário (opcional)
-        user_gender: Gênero do usuário (opcional)
-
-    Returns:
-        Dicionário com todas as métricas calculadas
-
-    Raises:
-        ValueError: Se o arquivo GPX for inválido ou vazio
-    """
-    logger.info(f"Iniciando processamento de GPX para usuário: {user_id}")
+    logger.info(f"Iniciando processamento de GPX para usuário: %s", user_id)
 
     # --- Parse ---
     try:

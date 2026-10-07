@@ -10,3 +10,7 @@ venv/
 temp/
 
 .env
+
+/files
+.files
+./files
