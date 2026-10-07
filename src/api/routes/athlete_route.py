@@ -1,10 +1,9 @@
-from fastapi import APIRouter, HTTPException
-
+from src.database.heart_rate_zones import get_heart_rate_zones
 from src.database.save_heart_rate_zones import save_heart_rate_zones
-
 from src.services.heart_zones.calculate_athlete_zones import calculate_athlete_zones
-from fastapi import APIRouter, HTTPException
 from src.database.db_users import get_user
+
+from fastapi import APIRouter, HTTPException
 
 
 router = APIRouter(
@@ -44,3 +43,19 @@ def calculate_zones(user_id: int):
             status_code=400,
             detail=str(error)
         )
+
+@router.get("/{user_id}/zones")
+def get_zones(user_id: int):
+
+    zones = get_heart_rate_zones(user_id)
+
+    if not zones:
+        raise HTTPException(
+            status_code=404,
+            detail="No heart rate zones found for this athlete"
+        )
+
+    return {
+        "user_id": user_id,
+        "zones": zones
+    }

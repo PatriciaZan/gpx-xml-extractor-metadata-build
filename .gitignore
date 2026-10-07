@@ -2,6 +2,10 @@
 .data
 ./data
 
+.idea
+./.idea
+/idea
+
 # ==========================================
 # Python Byte-compiled / Optimized files
 # ==========================================
